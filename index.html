@@ -37,9 +37,94 @@
       </div>
     </nav>
     <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/" alt="" srcset="" />
+      <div class="section_pic-container">
+        <img
+          class="profile-1"
+          src="./assets/profile-square.jpg"
+          alt="Aavash Gyawali profile picture"
+        />
       </div>
+      <div class="section_text">
+        <p class="section_text_p1">Hello, I'm</p>
+        <h1 class="title">Aavash Gyawali</h1>
+        <p class="section_text_p2">Web Developer</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/resume.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact me
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="Aavash's LinkedIn Profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/aavashgyawali'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="Aavash's Github Page"
+            class="icon"
+            onclick="location.href='https://github.com/AavashGyawali/'"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section_text_p1">Get TO Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section_pic-container">
+          <img
+            src="./assets/profile-2.jpg"
+            alt="Profile Pic"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/experience.png"
+                alt="Experiebce icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <p>here is</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>Bachelors on Computer Engineering (OnGoing)</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+              quaerat vel asperiores corrupti, veniam, natus eaque laboriosam
+              dolore repellat odio obcaecati exercitationem dolor. Eum
+              perferendis corrupti, recusandae explicabo quaerat alias id fuga
+              porro eos facere, provident ea, nam eius. Harum laborum velit
+              necessitatibus id hic delectus ducimus saepe architecto ipsam!
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'"
+      />
     </section>
   </body>
 </html>
