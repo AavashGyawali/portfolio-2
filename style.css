@@ -181,7 +181,11 @@ section {
 
 .section_text_p1 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
+}
+.hello {
+  font-size: 1.75rem;
+  text-align: center;
 }
 .section_text_p2 {
   font-size: 1.75rem;
@@ -198,6 +202,10 @@ section {
   justify-content: center;
   margin-top: 1rem;
   gap: 1rem;
+}
+
+.getToKnow {
+  font-size: 1rem;
 }
 
 /* Icon */
@@ -306,3 +314,42 @@ section {
   width: 400px;
   margin: auto 0;
 }
+
+/* experience */
+#experience {
+  position: relative;
+}
+
+.experience-sub-title {
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.article-container {
+  display: flex;
+  text-align: initial;
+  flex-wrap: wrap;
+  gap: 1rem;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+article {
+  display: flex;
+  width: 10rem;
+  gap: 0.5rem;
+}
+
+article .icon {
+  cursor: default;
+}
+
+/* project section */
