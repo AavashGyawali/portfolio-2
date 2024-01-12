@@ -379,6 +379,9 @@ article .icon {
 }
 
 /* contact */
+#contact {
+  position: relative;
+}
 
 #contact {
   display: flex;
