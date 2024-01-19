@@ -218,7 +218,9 @@ section {
 /* buttons */
 .btn-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -296,6 +298,9 @@ section {
 
 .details-container {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex: 1;
   background: white;
   border-radius: 2rem;
@@ -379,6 +384,18 @@ article .icon {
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.live {
+  justify-content: flex-start;
+}
+.alien {
+  gap: 2.5rem;
 }
 
 /* contact */

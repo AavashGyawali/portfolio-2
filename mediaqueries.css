@@ -107,4 +107,19 @@
   .linkedin-icon {
     margin-left: 1rem;
   }
+  .alien {
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 577px) {
+  .alien {
+    gap: 1.9rem;
+  }
+}
+
+@media screen and (max-width: 432px) {
+  .alien {
+    gap: 0px;
+  }
 }
