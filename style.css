@@ -298,9 +298,6 @@ section {
 
 .details-container {
   padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   flex: 1;
   background: white;
   border-radius: 2rem;
