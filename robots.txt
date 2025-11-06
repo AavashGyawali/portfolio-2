@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.aavashgyawali.com/sitemap.xml
+Sitemap: https://aavashgyawali.com/sitemap.xml

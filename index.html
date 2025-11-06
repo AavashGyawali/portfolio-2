@@ -4,7 +4,11 @@
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <meta name="robots" content="index, follow" />
+   <meta name="referrer" content="strict-origin-when-cross-origin" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta name="description" content="Aavash Gyawali is a Computer Engineer from Nepal and a computer/tech enthusiast." />
+   <meta name="author" content="Aavash Gyawali" />
+   <meta name="theme-color" content="#ffffff" />
    <meta name="keywords" content="aavash, gyawali,Aavash,Gyawali,aavashuzumaki12, aavash g, a gyawali, computer science, computer, computer engineering, engineer, computer engineer, science, web developer, web development, software engineer, software, web developer nepal, software engineer nepal, computer engineer nepal, computer science world, fullstack developer, backend developer, frontend developer, frontend, backend, fullstack" />
    <link rel="canonical" href="https://aavashgyawali.com/" /> 
 
@@ -18,11 +22,13 @@
   <meta property="og:title" content="Aavash Gyawali" />
   <meta property="og:description" content="Aavash Gyawali is a Computer Engineer from Nepal and a computer/tech enthusiast." />
   <meta property="og:image" content="https://aavashgyawali.com/assets/site.png" />
-  <meta property="og:image:type" content="image/jpg" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="en_US" />
   <!-- /Open Graph Tags -->
   <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://aavashgyawali.com/" />
   <meta name="twitter:site" content="Aavash Gyawali" />
   <meta name="twitter:creator" content="@aavashuzumaki" />
@@ -33,22 +39,81 @@
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-128JGW56DL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Performance: DNS prefetch and preconnect -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- Font loading with display=swap for performance -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  gtag('config', 'G-128JGW56DL');
-</script>
-   
+  <!-- Preload critical resources -->
+  <link rel="preload" as="image" href="/assets/profile-square.jpg" />
+  <link rel="preload" as="style" href="style.css" />
+  <link rel="preload" as="style" href="mediaqueries.css" />
     
     <title>Aavash Gyawali</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="stylesheet" href="mediaqueries.css" media="screen" />
+    
+    <!-- Manifest for PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Defer non-critical scripts -->
     <script src="script.js" defer></script>
+    
+    <!-- Google Analytics - Load after page content -->
+    <script>
+      // Defer Google Analytics loading
+      window.addEventListener('load', function() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-128JGW56DL';
+        document.head.appendChild(script);
+        
+        script.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-128JGW56DL');
+        };
+      });
+    </script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Aavash Gyawali",
+      "url": "https://aavashgyawali.com/",
+      "image": "https://aavashgyawali.com/assets/profile.jpg",
+      "sameAs": [
+        "https://www.linkedin.com/in/aavashgyawali",
+        "https://github.com/AavashGyawali",
+        "https://twitter.com/aavashuzumaki",
+        "https://www.instagram.com/aavashgyawali/",
+        "https://www.facebook.com/aavashgyawali12"
+      ],
+      "jobTitle": "Computer Engineer",
+      "description": "Computer Engineer and technology enthusiast from Nepal."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Aavash Gyawali",
+      "url": "https://aavashgyawali.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.google.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
   </head>
   <body>
     <nav id="desktop-nav">
@@ -84,6 +149,7 @@
           class="profile-1"
           src="./assets/profile-square.jpg"
           alt="Aavash Gyawali profile picture"
+          width="400" height="400" decoding="async" fetchpriority="high"
         />
       </div>
       <div class="section_text">
@@ -106,30 +172,35 @@
             src="./assets/linkedin.png"
             alt="Aavash's LinkedIn Profile"
             class="icon"
+            loading="lazy" decoding="async"
             onclick="location.href='https://www.linkedin.com/in/aavashgyawali'"
           />
           <img
             src="./assets/github.png"
             alt="Aavash's Github Page"
             class="icon"
+            loading="lazy" decoding="async"
             onclick="location.href='https://github.com/AavashGyawali/'"
           />
           <img
             src="./assets/twitter.png"
             alt="Aavash's Twitter Page"
             class="icon"
+            loading="lazy" decoding="async"
             onclick="location.href='https://twitter.com/aavashuzumaki'"
           />
           <img
             src="./assets/instagram.png"
             alt="Aavash's Instagram Page"
             class="icon"
+            loading="lazy" decoding="async"
             onclick="location.href='https://www.instagram.com/aavashgyawali/'"
           />
           <img
             src="./assets/facebook.png"
             alt="Aavash's FaceBook Page"
             class="icon"
+            loading="lazy" decoding="async"
             onclick="location.href='https://www.facebook.com/aavashgyawali12'"
           />
         </div>
@@ -137,31 +208,32 @@
     </section>
     <section id="about">
       <p class="section_text_p1 getToKnow">Get To Know More</p>
-      <h1 class="title">About Me</h1>
+      <h2 class="title">About Me</h2>
       <div class="section-container">
         <div class="section_pic-container">
           <img
             src="./assets/profile-2.jpg"
             alt="Profile Pic"
             class="about-pic"
+            width="400" height="400" loading="lazy" decoding="async"
           />
         </div>
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
-              <img
-                src="./assets/experience.png"
+          <img
+            src="./assets/experience.png"
                 alt="Experience icon"
-                class="icon"
+            class="icon" loading="lazy" decoding="async"
               />
               <h3>Experience</h3>
               <p>Fellowship at Pahadi Research and LLC</p>
             </div>
             <div class="details-container">
-              <img
-                src="./assets/education.png"
+          <img
+            src="./assets/education.png"
                 alt="Education icon"
-                class="icon"
+            class="icon" loading="lazy" decoding="async"
               />
               <h3>Education</h3>
               <p>Bachelors on Computer Engineering (OnGoing)</p>
@@ -183,13 +255,13 @@
       <img
         src="./assets/arrow.png"
         alt="arrow icon"
-        class="icon arrow"
+        class="icon arrow" loading="lazy" decoding="async"
         onclick="location.href='./#experience'"
       />
     </section>
     <section id="experience">
       <p class="section_text_p1">Explore My</p>
-      <h1 class="title">Experience</h1>
+      <h2 class="title">Experience</h2>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
@@ -199,7 +271,7 @@
                 <img
                   src="./assets/checkmark.png"
                   alt="Experience icon"
-                  class="icon"
+                  class="icon" loading="lazy" decoding="async"
                 />
                 <div>
                   <h3>HTML</h3>
@@ -210,7 +282,7 @@
                 <img
                   src="./assets/checkmark.png"
                   alt="Experience icon"
-                  class="icon"
+                  class="icon" loading="lazy" decoding="async"
                 />
                 <div>
                   <div>
@@ -223,7 +295,7 @@
                 <img
                   src="./assets/checkmark.png"
                   alt="Experience icon"
-                  class="icon"
+                  class="icon" loading="lazy" decoding="async"
                 />
                 <div>
                   <div>
@@ -241,7 +313,7 @@
                 <img
                   src="./assets/checkmark.png"
                   alt="Experience icon"
-                  class="icon"
+                  class="icon" loading="lazy" decoding="async"
                 />
                 <div>
                   <div>
@@ -254,7 +326,7 @@
                 <img
                   src="./assets/checkmark.png"
                   alt="Experience icon"
-                  class="icon"
+                  class="icon" loading="lazy" decoding="async"
                 />
                 <div>
                   <div>
@@ -267,7 +339,7 @@
                 <img
                   src="./assets/checkmark.png"
                   alt="Experience icon"
-                  class="icon"
+                  class="icon" loading="lazy" decoding="async"
                 />
                 <div>
                   <div>
@@ -280,7 +352,7 @@
                 <img
                   src="./assets/checkmark.png"
                   alt="Experience icon"
-                  class="icon"
+                  class="icon" loading="lazy" decoding="async"
                 />
                 <div>
                   <div>
@@ -298,7 +370,7 @@
                 <img
                   src="./assets/checkmark.png"
                   alt="Experience icon"
-                  class="icon"
+                  class="icon" loading="lazy" decoding="async"
                 />
                 <div>
                   <div>
@@ -311,7 +383,7 @@
                 <img
                   src="./assets/checkmark.png"
                   alt="Experience icon"
-                  class="icon"
+                  class="icon" loading="lazy" decoding="async"
                 />
                 <div>
                   <div>
@@ -345,13 +417,13 @@
       <img
         src="./assets/arrow.png"
         alt="arrow icon"
-        class="icon arrow"
+        class="icon arrow" loading="lazy" decoding="async"
         onclick="location.href='./#projects'"
       />
     </section>
     <section id="projects">
       <p class="section_text_p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
+      <h2 class="title">Projects</h2>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container color-container">
@@ -360,7 +432,7 @@
                 <img
                   src="./assets/drumkit.png"
                   alt="project 1"
-                  class="project-img"
+                  class="project-img" loading="lazy" decoding="async"
                 />
               </div>
               <h2 class="experience-sub-title project-title">DrumKit</h2>
@@ -386,7 +458,7 @@
                 <img
                   src="./assets/qrcode.PNG"
                   alt="project 2"
-                  class="project-img"
+                  class="project-img" loading="lazy" decoding="async"
                 />
               </div>
               <h2 class="experience-sub-title project-title">
@@ -414,7 +486,7 @@
                 <img
                   src="./assets/flower-colorization.png"
                   alt="Image Colorization of Flower"
-                  class="project-img"
+                  class="project-img" loading="lazy" decoding="async"
                 />
               </div>
               <h2 class="experience-sub-title project-title">
@@ -436,7 +508,7 @@
                 <img
                   src="./assets/alienrun.png"
                   alt="Alien Run game image"
-                  class="project-img"
+                  class="project-img" loading="lazy" decoding="async"
                 />
               </div>
               <h2 class="experience-sub-title project-title">Alien Run</h2>
@@ -455,19 +527,19 @@
       <img
         src="./assets/arrow.png"
         alt="arrow icon"
-        class="icon arrow"
+        class="icon arrow" loading="lazy" decoding="async"
         onclick="location.href='./#contact'"
       />
     </section>
     <section id="contact">
       <p class="section_text_p1">Get in touch</p>
-      <h1 class="class title">Contact Me</h1>
+      <h2 class="title">Contact Me</h2>
       <div class="contact-info-upper-container">
         <div class="contact-info-container email-icon">
           <img
             src="./assets/email.png"
             alt="Email Icon"
-            class="icon contact-icon"
+            class="icon contact-icon" loading="lazy" decoding="async"
           />
           <p>
             <a href="mailto:aavashuzumaki12@gmail.com">Mail</a>
@@ -477,7 +549,7 @@
           <img
             src="./assets/linkedin.png"
             alt="LinkedIn Icon"
-            class="icon contact-icon linkedin-icon"
+            class="icon contact-icon linkedin-icon" loading="lazy" decoding="async"
           />
           <p>
             <a href="https://www.linkedin.com/in/aavashgyawali/">LinkedIn</a>
@@ -487,7 +559,7 @@
       <img
         src="./assets/top-icon.png"
         alt="Top arrow icon"
-        class="icon arrow"
+        class="icon arrow" loading="lazy" decoding="async"
         onclick="location.href='#'"
       />
     </section>
