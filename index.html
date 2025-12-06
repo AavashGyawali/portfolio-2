@@ -42,6 +42,9 @@
   gtag('js', new Date());
 
   gtag('config', 'G-128JGW56DL');
+
+
+
 </script>
    
     
@@ -447,7 +450,15 @@
           </ul>
         </div>
       </nav>
-      <p>Copyright &#169; 2025 Aavash Gyawali. All Rights Reserved</p>
+      <p id="copyright"></p>
+
+
     </footer>
   </body>
+  <script>
+      const year = new Date().getFullYear();
+document.getElementById("copyright").innerHTML =
+  `Copyright © ${year} Aavash Gyawali. All Rights Reserved`;
+  </script>
+
 </html>
