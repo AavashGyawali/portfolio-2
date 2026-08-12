@@ -79,6 +79,18 @@
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") setMenu(false);
     });
+
+    // Safe-guard: if the viewport grows to the desktop layout while the
+    // menu is open, close it and release the scroll lock.
+    const mobileMq = window.matchMedia("(max-width: 767px)");
+    const onBreakpointChange = (e) => {
+      if (!e.matches && navList.classList.contains("open")) setMenu(false);
+    };
+    if (mobileMq.addEventListener) {
+      mobileMq.addEventListener("change", onBreakpointChange);
+    } else if (mobileMq.addListener) {
+      mobileMq.addListener(onBreakpointChange);
+    }
   }
 
   /* ------------------------------------------------------------------
@@ -130,7 +142,7 @@
         }
       });
     },
-    { threshold: 0.12, rootMargin: "0 0 -40px 0" },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
   );
 
   function initReveal() {
@@ -169,6 +181,23 @@
     { rootMargin: "-45% 0px -50% 0px" },
   );
   sections.forEach((section) => spyObserver.observe(section));
+
+  /* ------------------------------------------------------------------
+     Experience timeline accordion (compact rows, expand on click)
+     ------------------------------------------------------------------ */
+  function initTimeline() {
+    document.querySelectorAll(".timeline-toggle").forEach((toggle) => {
+      const item = toggle.closest(".timeline-item");
+      if (!item) return;
+      const setOpen = (open) => {
+        item.classList.toggle("open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+      };
+      toggle.addEventListener("click", () => {
+        setOpen(toggle.getAttribute("aria-expanded") !== "true");
+      });
+    });
+  }
 
   /* ------------------------------------------------------------------
      Dynamic footer copyright
@@ -214,6 +243,7 @@
     initTheme();
     initReveal();
     initTyped();
+    initTimeline();
     initCopyright();
     handleScroll();
   }

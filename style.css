@@ -169,14 +169,19 @@ body {
   padding: 0 1.5rem;
 }
 .section {
-  padding: 3.75rem 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.75rem 0;
   position: relative;
 }
 
 /* Section header */
 .section-head {
   max-width: 640px;
-  margin: 0 auto 2.4rem;
+  margin: 0 auto 1.8rem;
   text-align: center;
 }
 .eyebrow {
@@ -188,7 +193,7 @@ body {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-accent);
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 }
 .eyebrow::before,
 .eyebrow::after {
@@ -210,7 +215,7 @@ body {
   color: transparent;
 }
 .section-desc {
-  margin-top: 1rem;
+  margin-top: 0.7rem;
   color: var(--color-text-muted);
   line-height: 1.7;
 }
@@ -247,9 +252,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  background: color-mix(in srgb, var(--color-bg) 60%, transparent);
+  /* NOTE: no backdrop-filter here — it creates a containing block for
+     fixed-position descendants, which breaks the fullscreen mobile menu. */
+  background: color-mix(in srgb, var(--color-bg) 74%, transparent);
   border-bottom: 1px solid transparent;
   transition:
     box-shadow 0.3s,
@@ -429,6 +434,13 @@ body {
   }
   .js .menu-toggle {
     display: flex;
+    position: relative;
+    z-index: 102;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .js .menu-toggle.open {
+    background: var(--color-surface-2);
+    border-color: var(--color-accent);
   }
   .js .nav-list {
     display: flex;
@@ -546,7 +558,8 @@ body {
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 88vh;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   padding: 4rem 0 3rem;
@@ -1009,7 +1022,7 @@ body {
 }
 .timeline-item {
   position: relative;
-  padding: 0 0 1.9rem 1.5rem;
+  padding: 0 0 1.3rem 1.5rem;
 }
 .timeline-item:last-child {
   padding-bottom: 0;
@@ -1038,17 +1051,75 @@ body {
   border-radius: 999px;
   margin-bottom: 0.5rem;
 }
-.timeline-head {
+.timeline-toggle {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.3rem 1rem;
+  gap: 0.35rem 1rem;
+  width: 100%;
+  padding: 0.35rem 0 0;
+  margin: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
 }
-.timeline-item h3 {
+.timeline-toggle:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+.timeline-toggle:hover .timeline-btn-title {
+  color: var(--color-accent);
+}
+.timeline-toggle .timeline-tag {
+  margin-bottom: 0;
+}
+.timeline-btn-head {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.3rem 1rem;
+  min-width: 0;
+}
+.timeline-btn-title {
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 700;
+  color: var(--color-text);
+  transition: color 0.2s;
+}
+.timeline-btn-org {
+  flex-basis: 100%;
+  margin-top: -0.1rem;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+.timeline-caret {
+  margin-left: auto;
+  align-self: center;
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-muted);
+  transition: transform 0.3s ease, color 0.2s;
+}
+.timeline-item.open .timeline-caret {
+  transform: rotate(180deg);
+  color: var(--color-accent);
+}
+.timeline-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+.timeline-item.open .timeline-body {
+  grid-template-rows: 1fr;
+}
+.timeline-body-inner {
+  overflow: hidden;
+  min-height: 0;
 }
 .period {
   font-size: 0.8rem;
@@ -1062,18 +1133,18 @@ body {
   font-size: 0.92rem;
   margin-top: 0.15rem;
 }
-.timeline-item > p,
+.timeline-body-inner > p,
 .timeline-item .sub-project p {
   color: var(--color-text-muted);
   font-size: 0.95rem;
   line-height: 1.7;
-  margin-top: 0.6rem;
+  margin-top: 0.4rem;
 }
 .timeline-list {
-  margin-top: 0.6rem;
+  margin-top: 0.4rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.3rem;
 }
 .timeline-list li {
   position: relative;
@@ -1097,10 +1168,10 @@ body {
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--color-text);
-  margin: 1.1rem 0 0.4rem;
+  margin: 0.75rem 0 0.3rem;
 }
 .sub-project {
-  margin-top: 0.7rem;
+  margin-top: 0.5rem;
 }
 .sub-project h5 {
   font-family: var(--font-display);
@@ -1162,6 +1233,96 @@ body {
   font-weight: 500;
   color: var(--color-text-muted);
   text-align: center;
+}
+
+/* ==========================================================================
+   Projects
+   ========================================================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.5rem;
+  max-width: 940px;
+  margin: 0 auto;
+}
+.project-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s,
+    border-color 0.25s;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--color-accent);
+}
+.project-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+.project-card-status {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+.project-card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  transition:
+    color 0.2s,
+    border-color 0.2s,
+    background 0.2s;
+}
+.project-card-link:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+}
+.project-card-link svg {
+  width: 18px;
+  height: 18px;
+}
+.project-card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.project-card-desc {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.project-card-url {
+  margin-top: auto;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  word-break: break-all;
+  transition: color 0.2s;
+}
+.project-card-url:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
 }
 
 /* ==========================================================================

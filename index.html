@@ -156,6 +156,7 @@
           </button>
           <ul class="nav-list" id="primary-menu">
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
             <li class="nav-cta">
@@ -359,151 +360,293 @@
           </div>
           <div class="timeline" data-stagger>
             <div class="timeline-item">
-              <span class="timeline-tag">Current</span>
-              <div class="timeline-head">
-                <h3>Freelance Developer</h3>
-                <span class="period">Present</span>
+              <button
+                type="button"
+                class="timeline-toggle"
+                aria-expanded="false"
+                aria-controls="exp-freelance"
+              >
+                <span class="timeline-tag">Current</span>
+                <span class="timeline-btn-head">
+                  <span class="timeline-btn-title">Freelance Developer</span>
+                  <span class="period">Present</span>
+                </span>
+                <svg class="timeline-caret" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="m6 9 6 6 6-6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span class="timeline-btn-org">Freelance</span>
+              </button>
+              <div class="timeline-body" id="exp-freelance">
+                <div class="timeline-body-inner">
+                  <p class="org">Freelance</p>
+                  <p>
+                    Building and delivering web solutions for clients —
+                    developing features, fixing issues, and shipping reliable
+                    software for real-world use.
+                  </p>
+                </div>
               </div>
-              <p class="org">Freelance</p>
-              <p>
-                Building and delivering web solutions for clients — developing
-                features, fixing issues, and shipping reliable software for
-                real-world use.
+            </div>
+
+            <div class="timeline-item">
+              <button
+                type="button"
+                class="timeline-toggle"
+                aria-expanded="false"
+                aria-controls="exp-software"
+              >
+                <span class="timeline-tag">Work</span>
+                <span class="timeline-btn-head">
+                  <span class="timeline-btn-title">Software Developer</span>
+                  <span class="period">Sep 2024 — Nov 2025</span>
+                </span>
+                <svg class="timeline-caret" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="m6 9 6 6 6-6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span class="timeline-btn-org"
+                  >Geofinity Solution Pvt. Ltd. — Baluwatar, Nepal</span
+                >
+              </button>
+              <div class="timeline-body" id="exp-software">
+                <div class="timeline-body-inner">
+                  <p class="org">
+                    Geofinity Solution Pvt. Ltd. — Baluwatar, Nepal
+                  </p>
+                  <ul class="timeline-list">
+                    <li>
+                      Designed and developed responsive, high-performance web
+                      applications with a focus on exceptional user experience.
+                    </li>
+                    <li>
+                      Managed end-to-end server infrastructure — deployment,
+                      monitoring, and maintenance using Linux, Docker, Nginx,
+                      and Traefik.
+                    </li>
+                    <li>
+                      Implemented SEO strategies and analytics integration,
+                      improving site visibility and user engagement.
+                    </li>
+                  </ul>
+                  <h4 class="timeline-subtitle">World Bank Initiatives</h4>
+                  <div class="sub-project">
+                    <h5>Nepal Budget Analysis Platform</h5>
+                    <ul>
+                      <li>
+                        Engineered an interactive data-visualization web app
+                        for Nepal's national budget using React, Leaflet.js, and
+                        GeoJSON.
+                      </li>
+                      <li>
+                        Implemented dynamic filtering by sector, district, and
+                        fiscal year with integrated interactive maps and charts.
+                      </li>
+                      <li>
+                        Designed an intuitive UI enabling policymakers and
+                        citizens to explore complex budget data effortlessly.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="sub-project">
+                    <h5>DidikiAwaaz</h5>
+                    <ul>
+                      <li>
+                        Developed a comprehensive survey platform for educational
+                        and social research targeting rural households.
+                      </li>
+                      <li>
+                        Built a React-based frontend integrated with Enketo
+                        Express for seamless form submissions.
+                      </li>
+                      <li>
+                        Implemented an OpenRosa-compatible backend ensuring
+                        standardized, secure data collection.
+                      </li>
+                      <li>
+                        Enabled offline-first architecture with automatic
+                        synchronization for low-connectivity areas.
+                      </li>
+                      <li>
+                        Created interactive data dashboards for real-time
+                        visualization and reporting.
+                      </li>
+                      <li>
+                        Optimized platform architecture to handle thousands of
+                        concurrent users and large-scale datasets.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <button
+                type="button"
+                class="timeline-toggle"
+                aria-expanded="false"
+                aria-controls="exp-fellowship"
+              >
+                <span class="timeline-tag">Fellowship</span>
+                <span class="timeline-btn-head">
+                  <span class="timeline-btn-title">Research Fellow</span>
+                  <span class="period">Dec 2023 — Feb 2024</span>
+                </span>
+                <svg class="timeline-caret" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="m6 9 6 6 6-6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span class="timeline-btn-org">Pahadi Research LLC — Remote</span>
+              </button>
+              <div class="timeline-body" id="exp-fellowship">
+                <div class="timeline-body-inner">
+                  <p class="org">Pahadi Research LLC — Remote</p>
+                  <ul class="timeline-list">
+                    <li>
+                      Completed an intensive 2-month research fellowship focused
+                      on enterprise software development.
+                    </li>
+                    <li>
+                      Acquired proficiency in C# programming with emphasis on
+                      unit testing and best practices.
+                    </li>
+                    <li>
+                      Developed RESTful APIs and gained hands-on experience with
+                      API design patterns.
+                    </li>
+                    <li>
+                      Explored Flutter for cross-platform mobile application
+                      development.
+                    </li>
+                    <li>
+                      Applied the technologies in practical projects using C#,
+                      Flutter, and MySQL.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <button
+                type="button"
+                class="timeline-toggle"
+                aria-expanded="false"
+                aria-controls="exp-education"
+              >
+                <span class="timeline-tag">Education</span>
+                <span class="timeline-btn-head">
+                  <span class="timeline-btn-title">B.E. Computer Engineering</span>
+                  <span class="period">2019 — 2024</span>
+                </span>
+                <svg class="timeline-caret" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="m6 9 6 6 6-6"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span class="timeline-btn-org"
+                  >Advance College of Engineering and Management (ACEM)</span
+                >
+              </button>
+              <div class="timeline-body" id="exp-education">
+                <div class="timeline-body-inner">
+                  <p class="org">
+                    Advance College of Engineering and Management (ACEM) —
+                    Lalitpur, Nepal
+                  </p>
+                  <div class="sub-project">
+                    <h5>Leaf Disease Prediction System</h5>
+                    <p>
+                      Machine learning-based solution for automated plant
+                      disease detection and classification using computer
+                      vision and neural networks.
+                    </p>
+                  </div>
+                  <div class="sub-project">
+                    <h5>AI-Powered Image Colorization</h5>
+                    <p>
+                      Deep learning model that colorizes grayscale flower images
+                      — demonstrating proficiency in image processing and neural
+                      network architectures.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Projects ===== -->
+      <section id="projects" class="projects section">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Things I've built</span>
+            <h2 class="section-title">Projects</h2>
+            <p class="section-desc">
+              Selected work I've designed, built, and shipped.
+            </p>
+          </div>
+          <div class="projects-grid">
+            <article class="project-card reveal">
+              <div class="project-card-top">
+                <span class="project-card-status">Live</span>
+                <a
+                  class="project-card-link"
+                  href="https://bill.aavashgyawali.com.np"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open Billing Platform"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M7 17 17 7m0 0H9m8 0v8"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <h3 class="project-card-title">Billing Platform</h3>
+              <p class="project-card-desc">
+                A personal billing application — invoices, payments, and
+                client management.
               </p>
-            </div>
-
-            <div class="timeline-item">
-              <span class="timeline-tag">Work</span>
-              <div class="timeline-head">
-                <h3>Software Developer</h3>
-                <span class="period">Sep 2024 — Nov 2025</span>
-              </div>
-              <p class="org">Geofinity Solution Pvt. Ltd. — Baluwatar, Nepal</p>
-              <ul class="timeline-list">
-                <li>
-                  Designed and developed responsive, high-performance web
-                  applications with a focus on exceptional user experience.
-                </li>
-                <li>
-                  Managed end-to-end server infrastructure — deployment,
-                  monitoring, and maintenance using Linux, Docker, Nginx, and
-                  Traefik.
-                </li>
-                <li>
-                  Implemented SEO strategies and analytics integration,
-                  improving site visibility and user engagement.
-                </li>
-              </ul>
-              <h4 class="timeline-subtitle">
-                Notable Projects — World Bank Initiatives
-              </h4>
-              <div class="sub-project">
-                <h5>Nepal Budget Analysis Platform</h5>
-                <ul>
-                  <li>
-                    Engineered an interactive data-visualization web app for
-                    Nepal's national budget using React, Leaflet.js, and
-                    GeoJSON.
-                  </li>
-                  <li>
-                    Implemented dynamic filtering by sector, district, and
-                    fiscal year with integrated interactive maps and charts.
-                  </li>
-                  <li>
-                    Designed an intuitive UI enabling policymakers and citizens
-                    to explore complex budget data effortlessly.
-                  </li>
-                </ul>
-              </div>
-              <div class="sub-project">
-                <h5>DidikiAwaaz</h5>
-                <ul>
-                  <li>
-                    Developed a comprehensive survey platform for educational
-                    and social research targeting rural households.
-                  </li>
-                  <li>
-                    Built a React-based frontend integrated with Enketo Express
-                    for seamless form submissions.
-                  </li>
-                  <li>
-                    Implemented an OpenRosa-compatible backend ensuring
-                    standardized, secure data collection.
-                  </li>
-                  <li>
-                    Enabled offline-first architecture with automatic
-                    synchronization for low-connectivity areas.
-                  </li>
-                  <li>
-                    Created interactive data dashboards for real-time
-                    visualization and reporting.
-                  </li>
-                  <li>
-                    Optimized platform architecture to handle thousands of
-                    concurrent users and large-scale datasets.
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <span class="timeline-tag">Fellowship</span>
-              <div class="timeline-head">
-                <h3>Research Fellow</h3>
-                <span class="period">Dec 2023 — Feb 2024</span>
-              </div>
-              <p class="org">Pahadi Research LLC — Remote</p>
-              <ul class="timeline-list">
-                <li>
-                  Completed an intensive 2-month research fellowship focused on
-                  enterprise software development.
-                </li>
-                <li>
-                  Acquired proficiency in C# programming with emphasis on unit
-                  testing and best practices.
-                </li>
-                <li>
-                  Developed RESTful APIs and gained hands-on experience with API
-                  design patterns.
-                </li>
-                <li>
-                  Explored Flutter for cross-platform mobile application
-                  development.
-                </li>
-                <li>
-                  Applied the technologies in practical projects using C#,
-                  Flutter, and MySQL.
-                </li>
-              </ul>
-            </div>
-
-            <div class="timeline-item">
-              <span class="timeline-tag">Education</span>
-              <div class="timeline-head">
-                <h3>Bachelor of Engineering in Computer Engineering</h3>
-                <span class="period">2019 — 2024</span>
-              </div>
-              <p class="org">
-                Advance College of Engineering and Management (ACEM) — Lalitpur,
-                Nepal
-              </p>
-              <div class="sub-project">
-                <h5>Leaf Disease Prediction System</h5>
-                <p>
-                  Machine learning-based solution for automated plant disease
-                  detection and classification using computer vision and neural
-                  networks.
-                </p>
-              </div>
-              <div class="sub-project">
-                <h5>AI-Powered Image Colorization</h5>
-                <p>
-                  Deep learning model that colorizes grayscale flower images —
-                  demonstrating proficiency in image processing and neural
-                  network architectures.
-                </p>
-              </div>
-            </div>
+              <a
+                class="project-card-url"
+                href="https://bill.aavashgyawali.com.np"
+                target="_blank"
+                rel="noopener noreferrer"
+                >bill.aavashgyawali.com.np</a
+              >
+            </article>
           </div>
         </div>
       </section>
@@ -687,7 +830,9 @@
           </div>
           <div class="contact-cta reveal">
             <a
-              href="mailto:aavashgyawali1@gmail.com?subject=Project%20inquiry"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=aavashgyawali1@gmail.com&su=Project%20inquiry&body=Hello%20Aavash%2C%0A%0AI%27d%20like%20to%20work%20with%20you."
+              target="_blank"
+              rel="noopener noreferrer"
               class="btn btn-primary btn-lg"
               >Start a Conversation</a
             >
@@ -708,6 +853,7 @@
         <nav class="footer-nav" aria-label="Footer navigation">
           <ul class="footer-nav-list">
             <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
