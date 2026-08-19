@@ -3,8 +3,7 @@
  * No framework, no backend. Pure vanilla JS.
  *
  * Handles: persisted dark/light theme, mobile navigation, scroll-reveal
- * animations, typed hero role, scrollspy nav, scroll progress bar, dynamic
- * footer year, and back-to-top.
+ * animations, scrollspy nav, dynamic footer year, and back-to-top.
  */
 
 (() => {
@@ -94,43 +93,6 @@
   }
 
   /* ------------------------------------------------------------------
-     Typed hero role
-     ------------------------------------------------------------------ */
-  const typedEl = document.getElementById("typed-role");
-  const roles = [
-    "Computer Engineer",
-    "Web Developer",
-    "Full-Stack Developer",
-    "Tech Enthusiast from Nepal",
-  ];
-
-  function initTyped() {
-    if (!typedEl || reducedReduced) return;
-    let roleIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-    function tick() {
-      const word = roles[roleIndex];
-      typedEl.textContent = word.slice(0, charIndex);
-
-      let delay = deleting ? 40 : 85;
-      if (!deleting && charIndex === word.length) {
-        delay = 1600;
-        deleting = true;
-      } else if (deleting && charIndex === 0) {
-        deleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        delay = 400;
-      } else {
-        charIndex += deleting ? -1 : 1;
-      }
-      setTimeout(tick, delay);
-    }
-    tick();
-  }
-
-  /* ------------------------------------------------------------------
      Scroll-reveal animations via IntersectionObserver
      ------------------------------------------------------------------ */
   const revealObserver = new IntersectionObserver(
@@ -210,9 +172,8 @@
   }
 
   /* ------------------------------------------------------------------
-     Unified scroll handler (progress bar, header state, back-to-top)
+     Unified scroll handler (header state, back-to-top)
      ------------------------------------------------------------------ */
-  const progressBar = document.getElementById("progress-bar");
   const siteHeader = document.querySelector(".site-header");
   const backToTop = document.getElementById("back-to-top");
 
@@ -227,11 +188,6 @@
 
   function handleScroll() {
     const y = window.scrollY;
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-
-    if (progressBar) {
-      progressBar.style.width = max > 0 ? `${(y / max) * 100}%` : "0%";
-    }
     if (siteHeader) siteHeader.classList.toggle("scrolled", y > 12);
     if (backToTop) backToTop.classList.toggle("show", y > 500);
   }
@@ -242,7 +198,6 @@
   function init() {
     initTheme();
     initReveal();
-    initTyped();
     initTimeline();
     initCopyright();
     handleScroll();
